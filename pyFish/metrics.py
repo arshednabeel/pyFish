@@ -10,11 +10,6 @@ class metrics:
 	def R2(self,data,op,poly):
 		return 1 - (np.nanmean(np.square(data - poly(op)))/np.nanmean(np.square(data - np.nanmean(data))))
 
-	def R2_adj(self, data, op, poly, k):
-		r2 = self.R2(data, op, poly)
-		n = len(op)
-		return 1-(((1-r2)*(n-1))/(n-k-1))
-
 	def fit_poly(self,x,y,deg):
 		nan_idx = np.argwhere(np.isnan(y))
 		x_ = np.delete(x,nan_idx)
