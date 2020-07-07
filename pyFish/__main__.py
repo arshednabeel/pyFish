@@ -28,7 +28,7 @@ class Characterize(preprocessing, gaussian_test):
 		self.inc = 0.01
 		self.dt_ = 'auto'
 		self.delta_t = 1
-		self.order_metric = "R2"
+		self.order_metric = "R2_adj"
 		#self.optimium_timescale = optimium_timescale()
 		self.__dict__.update(kwargs)
 		preprocessing.__init__(self)
